@@ -1,0 +1,64 @@
+What is a data structure?
+A data structure is a way to store and organize data in a computer, so that it can be used efficently.
+
+
+Defining a List:
+A List is an example of an Abstract Data Type(ADT)
+ - Store a given number of elements of any type
+ - Read elements by position
+ - Modify element at a position
+
+Arrays are concrete implementations. 
+
+Abstract Data Types(ADTS):
+Define data and operations but don't have implementations.
+
+Linked List:
+- Typically not aligned in memory stored at different locations.
+- In a singly linked list each node is defined as a struct with int data, and a pointer to the next node. 
+
+Array Vs Linked List: Timestamp (37.00)
+
+Array:
+    - Cost of accesing an element.
+        - O(1) - constant operation
+        - Because Array is stored as one contigous block of memory
+        e.g say we have an array A
+        Base Address 200
+        Address of A[i]
+        = 200 + i x 4 
+        so say we want to find the 6th element of an array under the hood the memory of that element would be 
+        200 + 6 x 4 = 222 this is how the memory address would be calculated. 
+    
+    -  Memory Useage
+        -Array is fixed size.
+        - There is used memory and unused memory. Used is the stored values and unused is the extra space waiting to be filled.
+        - Memory may not be available as one large block
+
+    - Cost of inserting an element:
+        - Beginning - O(n)
+            - At the beginning of a list to insert we still need to shift all elements to the right by 1 to make a space at the beginning for insertion.
+        - At end - O(1)
+            - If there is space in the array we just write to the next highest index of the array(Case of dynamic array where we grow the array when full.)
+            - If array is full then the cost of inserting at the end will be O(n) since we would need to create a new array with double capacity and write the elements over to the new array.
+        - At ith Poisition. -O(n)
+            - We would need to shift elements to the right to make space from the place of insertion
+
+Linked List:
+    - Cost of accessing an element.
+        - Average time is O(n) because of traversal.
+
+    - Memory Useage
+        - No unused memory
+        - extra memory for pointer variables.
+        - For a linked list the memory useage also heavily depends on the data being stored.
+        - Memory may be available as multiple small blocks
+
+    - Cost of inserting an element:
+        - Beginning - O(1)-Constant
+            - At the beginning of a linked list if we want to insert an element at the beginning we just create a new node. Update the head to be the new node and set the pointer of the new node/head to point to the previous head.
+        - At end of list.
+            - O(n) this is because we need to traverse the entire list get to the end where the next pointer is null and insert and update pointers.
+
+        - At ith posiiton. O(n):
+            - This is because we still need to traverse through the list and find the spot of insertion which is proportional to the size of the array.

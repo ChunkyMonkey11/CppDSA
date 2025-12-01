@@ -1,0 +1,51 @@
+- Struct for a node with two fields:
+- int data //4bytes - int is 4 bytes
+- Node* node //4bytes I dont know why a node pointer is 4 bytes on a 32 bit system on a 64 bit system it would be 8 bytes
+
+The first node in a linked List is reffered to as the head node
+
+The only piece of information we keep all the time is the head node or starting node. 
+
+The last node points to null ptr or address 0 for null.
+
+To traverse a linked list we start at the head node. And traverse through each pointer in the list.
+
+Access to a random element in a linked List is a O(N) Operation since we need to traverse throughh the list and find the node we are looking for.
+Inserting a node is also an O(N) operation because it still requires traversal while the updating of a pointers is a quick operation. 
+Deleting is also O(N)
+--------------------------------------------------------------------------------------------------------------------------------------------
+implementation in C/C++
+
+In a Linked List:
+- Data is stored in multiple non-contigous blocks of memory
+- 0 is a macro for null it is an invalid address. NOT A VALID MEMORY locations
+
+struct Node {
+    int data;
+    Node* link;
+}
+
+struct Node* head;
+.. This acts as the head or door to our linked list.
+
+void Insert(int x){
+    // Step 1 allocate memory for a temp node
+    // Set the value of the temp node as the passed in x value.
+    // Set the link for this new node to be null. 
+    head = temp. 
+}
+------------------------------------------------------------------------
+Node* temp = (Node*)malloc*(sizeof(struct Node));
+// Malloc asks the OS- Operating system to give us memory of the size of a node.
+// The OS returns the starting address of that memory.
+// We type cast it to Node* & now temp points to a newly created empty node.
+------------------------------------------------------------------------
+(*temp).data = x;
+// Or equivalently:
+temp->data = x;
+This writes the user's number into the node.
+------------------------------------------------------------------------
+temp->link = NULL;
+For now we are linking to nothing.
+------------------------------------------------------------------------
+    
