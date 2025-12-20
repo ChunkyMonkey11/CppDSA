@@ -11,8 +11,9 @@ struct Node{
 // Global var head for entry of the linked list
 Node* head;
 
-// Write the insert function to insert into the linked List.
 
+
+// Insert at head of list
 void Insert(int data){
     // Allocate memory for a new temp node var
     Node* temp = new Node(); //New node in memory currently unfilled
@@ -21,7 +22,7 @@ void Insert(int data){
     head = temp;
 
 };
-
+// Insert at nth position
 void Insert(int data, int n){
     // Define temp1 this will be our new node to be inserted into the list. 
     Node* temp1 = new Node();
@@ -41,6 +42,38 @@ void Insert(int data, int n){
     temp2->next = temp1;
 
 }
+
+// Work on deleting a node from a list.
+
+void Delete(int data){
+    // Write code here.
+    Node* temp = head;
+    int value_to_delete = data;
+    bool found = false;
+    // Case 1 head is the node to delete.
+    if (temp->data == value_to_delete){
+        head = temp->next;
+        delete temp;
+    }
+    // Case 2 value to be deleted is not the head. 
+    while(temp->next != NULL){
+        if (temp->next->data == value_to_delete){
+            Node* Removed_Node = temp->next;
+            temp->next = Removed_Node->next;
+            delete Removed_Node;
+            found = true;
+            cout << "Node with value" << " " << data << " has been deleted.\n" ;
+            return; 
+        }
+        temp = temp->next;
+    }
+    if(!found){
+        cout << "Value not found \n";
+    }
+
+
+}
+
 void Print(){
     Node* temp = head;
     printf("List is: ");    
@@ -56,5 +89,7 @@ int main() {
     Insert(2);
     Insert(3);
     Insert(7);
+    Delete(5);
     Print();
+
 };
