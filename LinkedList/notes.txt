@@ -48,4 +48,30 @@ This writes the user's number into the node.
 temp->link = NULL;
 For now we are linking to nothing.
 ------------------------------------------------------------------------
-    
+Linked List: Inserting a Node at nth position:
+Step 1 create a node pointer called temp 1.
+Step 2 set the temp1 data to the data passed in to be inserted
+step 3 set temp1 link to be null
+Step 4 If the position for insertion is 1 then we will take temp 1 our new node and set its link to be point to the current head. then we update head to point to the temp1 variable since this is the new starting node.
+
+Case 2 when n!=1.
+Create an additional temp2 pointer that starts and points at head.
+Position 1: [5]
+Position 2: [7]
+Position 3: [9]
+we want to insert (8,3)
+temp 2 starts at head so it starts at position 1.
+then we loop once 3-2 = 1 so one loop or one shift right from head. now temp2 points to position 2[7]
+then we say temp1 link will point to temp2-> link
+so temp1 points to position3
+temp2->link = temp1
+so 2[7] points to the new node and we have 
+Position 1:[5]
+Position 2:[7]
+Position 3:[8]
+Position 4:[9]
+------------------------------------------------------------------------
+Deleting a node at nth position
+1. Fix the links
+
+
