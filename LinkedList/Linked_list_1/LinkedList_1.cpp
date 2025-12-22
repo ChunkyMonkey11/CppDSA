@@ -121,6 +121,21 @@ void DeleteByPosition(int n){
             "             
 */
 
+// Todo Reverse a linked_list iterative method. 
+
+void Reverse(){
+    Node *current, *prev,*next; 
+    current = head;
+    prev = NULL;
+    // Iterator 
+    while(current != NULL){
+        next = current->next; // stores the next variable of the node we are reversing before reversal(this allows us to keep track of the next nodes address after reversal)
+        current->next = prev; //sets the current nodes next variable to be = to the previous nodes address.
+        prev = current;// Moving the new previous node to be the address of the node that was just updated 
+        current = next; // since we stored the address of the next node in the linked list we can now safely move the current node to be the next node in the linked list   
+    }
+    head = prev; // head now needs to point to previous because after the loop ends current will be pointing to NULL. and prev is the last node in the list. 
+}
 
 
 
@@ -144,7 +159,8 @@ int main() {
     Insert(2);
     Insert(3);
     Insert(7);
-    Delete(5);
+    Print();
+    Reverse();
     Print();
 
 };
