@@ -1,9 +1,0 @@
-List:
- - Empty list has a size of 0
- - Insert
- - Remove
- - Count
- - Read/Modify element at a position
- - Specify data-type
-
- 
